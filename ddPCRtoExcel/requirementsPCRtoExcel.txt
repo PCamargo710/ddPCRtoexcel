@@ -1,6 +1,3 @@
-requirements: 
-
 streamlit
 pandas
-openyxl
-from io BytesIO
+openpyxl
