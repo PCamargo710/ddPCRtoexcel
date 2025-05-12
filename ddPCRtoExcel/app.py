@@ -15,7 +15,7 @@ if uploaded_files:
         st.dataframe(df.head())
         # Sélection des colonnes à garder
         colonnes_disponibles = list(df.columns)
-        colonnes_par_defaut=["Well","Sample","Target","Concentration","CopiesPer20uLWell","Positives","Negatives","AcceptedDroplets","Threshold","MeanAmplitudeofPositives","MeanAmplitudeofNegatives","PoissonConfMax68","PoissonConfMin68"]
+        colonnes_par_defaut=["Well","Sample","Target","Concentration","AcceptedDroplets","Threshold","MeanAmplitudeofPositives","MeanAmplitudeofNegatives"]
         colonnes_choisies = st.multiselect(
             f"📌 Colonnes à conserver pour {uploaded_file.name} :",
             options=colonnes_disponibles,
