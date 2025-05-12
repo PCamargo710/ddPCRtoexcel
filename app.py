@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
-import xlsxwriter
 from io import BytesIO
+from openpyxl import Workbook
 
 st.title("Traitement de fichiers ddPCR\n (CSV → Excel)")
 
@@ -31,7 +31,7 @@ if uploaded_files:
 
     # Téléchargement Excel
     output = BytesIO()
-    with pd.ExcelWriter(output, engine='xlsxwriter') as writer:
+    with pd.ExcelWriter(output, engine='openpyxl') as writer:
         result_df.to_excel(writer, index=False, sheet_name='ddPCR filtré')
     output.seek(0)
 
